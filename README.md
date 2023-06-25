@@ -2,7 +2,8 @@
   <a href="https://github.com/DurinPavel/horse_colic_database/blob/main/README_EN.md" target="_blank">
     <p>English version</p></a>
     <p align="justify">
-      Целью данного проекта является подготовка набора данных  о состоянии здоровья лошадей, 
+      Целью данного проекта является подготовка <a href="https://github.com/DurinPavel/horse_colic_database/blob/main/horse_data.csv" target="_blank">
+      набора данных</a> о состоянии здоровья лошадей, 
       испытывающих кишечные колики, для дальнейшего использования с применением различных методов Data Science.
       В работе применялись возможности библиотеки <i>Pandas</i> языка программирования <i>Python</i>.
     </p>
