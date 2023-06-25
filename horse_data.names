@@ -1,267 +1,267 @@
-1. НАЗВАНИЕ: База данных Horse Colic
- 
-2. Исходная информация
--- Создатели: Мэри Маклиш и Мэтт Сесиль
-Департамент компьютерных наук
-Университет Гвельфа
-Гвельф, Онтарио, Канада N1G 2W1
-mdmcleish@water.waterloo.edu
--- Донор: Уилл Тейлор (taylor@pluto.arc.nasa.gov)
--- Дата: 06.08.89
- 
-3. Использование в прошлом:
--- Неизвестный
- 
-4. Соответствующая информация:
- 
--- 2 файла данных
--- horse-colic.data: 300 тренировочных экземпляров
--- horse-colic.test: 68 тестовых экземпляров
--- Возможные атрибуты класса: 24 (независимо от того, является ли поражение хирургическим)
--- другие включают: 23, 25, 26 и 27
--- Многие типы данных: (непрерывные, дискретные и номинальные)
- 
-5. Количество экземпляров: 368 (300 для обучения, 68 для тестирования)
- 
-6. Количество атрибутов: 28
- 
-7. Информация об атрибутах:
- 
-1: операция?
-1 = да, была операция
-2 = лечили без операции
- 
-2: Возраст
-1 = взрослая лошадь
-2 = Молодой (< 6 месяцев)
- 
-3: Номер больницы
-- числовой идентификатор
-- номер дела, присвоенный лошади
-(может быть не уникальным, если лошадь лечится > 1 раза)
- 
-4: ректальная температура
-- линейный
-- в градусах Цельсия.
-- Повышенная температура может возникнуть из-за инфекции.
-- температура может быть снижена, когда животное находится в позднем шоке
-- нормальная температура 37,8
-- этот параметр обычно меняется по мере развития проблемы
-например. может начаться нормально, затем стать повышенным из-за
-поражения, проходя обратно через нормальный диапазон, как
-лошадь в шоке
-5: пульс
-- линейный
-- частота сердечных сокращений в ударах в минуту
-- является отражением состояния сердца: 30-40 нормально для взрослых
-- редко имеют более низкий показатель, чем обычно, хотя спортивные лошади
-может иметь скорость 20-25
-- животные с болезненными поражениями или страдающие циркуляторным шоком
-может быть учащенное сердцебиение
- 
-6: частота дыхания
-- линейный
-- нормальная скорость от 8 до 10
-- полезность сомнительна из-за больших колебаний
- 
-7: температура конечностей
-- субъективное указание на периферическое кровообращение
-- возможные значения:
-1 = нормальный
-2 = теплый
-3 = круто
-4 = холодный
-- холодные или холодные конечности указывают на возможный шок
-- горячие конечности должны коррелировать с повышенной ректальной температурой.
- 
-8: периферический пульс
-- субъективный
-- возможные значения:
-1 = нормальный
-2 = увеличено
-3 = уменьшено
-4 = отсутствует
-- нормальное или повышенное РР свидетельствует об адекватном кровообращении
-в то время как снижение или отсутствие указывают на плохую перфузию
- 
-9: слизистые оболочки
-- субъективное измерение цвета
-- возможные значения:
-1 = обычный розовый
-2 = ярко-розовый
-3 = бледно-розовый
-4 = бледно-цианотичный
-5 = ярко-красный / введенный
-6 = темный цианотичный
-- 1 и 2, вероятно, указывают на нормальное или слегка повышенное
-обращение
-- 3 могут возникать при раннем шоке
-- 4 и 6 указывают на серьезное нарушение кровообращения
-- 5 больше указывает на септицемию
- 
-10: время наполнения капилляров
-- клиническое заключение. Чем дольше пополнение, тем хуже
-обращение
-- возможные значения
-1 = < 3 секунд
-2 = >= 3 секунды
- 
-11: боль - субъективная оценка уровня боли лошади.
-- возможные значения:
-1 = тревога, боли нет
-2 = депрессия
-3 = перемежающаяся легкая боль
-4 = перемежающаяся сильная боль
-5 = постоянная сильная боль
-- НЕ следует рассматривать как упорядоченную или дискретную переменную!
-- В общем, чем больнее, тем больше вероятность, что потребуется
-операция
-- предшествующее лечение боли может в некоторой степени маскировать уровень боли
- 
-12: перистальтика
-- показатель активности в кишечнике лошади. как кишка
-становится более раздутой или лошадь становится более токсичной,
-активность снижается
-- возможные значения:
-1 = гипермобильный
-2 = нормальный
-3 = гипомобильный
-4 = отсутствует
- 
-13: вздутие живота
-- ВАЖНЫЙ параметр.
-- возможные значения
-1 = нет
-2 = легкий
-3 = умеренный
-4 = тяжелый
-- животное с вздутием живота, вероятно, будет болезненным и
-имеют сниженную моторику кишечника.
-- лошади с сильным вздутием живота, вероятно, потребуется
-Операция просто сбросит давление
- 
-14: назогастральный зонд
-- это относится к любому газу, выходящему из трубки
-- возможные значения:
-1 = нет
-2 = легкий
-3 = значительный
-- большая газовая шапка в желудке, скорее всего, даст лошади
-дискомфорт
- 
-15: назогастральный рефлюкс
-- возможные значения
-1 = нет
-2 = > 1 литр
-3 = < 1 литра
-- чем больше количество рефлюкса, тем больше вероятность того, что
-некоторое серьезное препятствие для прохода жидкости от остальной части
-кишечник
- 
-16: назогастральный рефлюкс ЛГ
-- линейный
-- шкала от 0 до 14, где 7 - нейтрально
-- нормальные значения находятся в диапазоне от 3 до 4
- 
-17: ректальное исследование - кал
-- возможные значения
-1 = нормальный
-2 = увеличено
-3 = уменьшилось
-4 = отсутствует
-- отсутствие кала, вероятно, указывает на непроходимость
- 
-18: живот
-- возможные значения
-1 = нормальный
-2 = другое
-3 = твердый кал в толстой кишке
-4 = растянутая тонкая кишка
-5 = растянутая толстая кишка
-- 3, вероятно, препятствие, вызванное механическим ударом
-и обычно лечится медикаментозно
-- 4 и 5 указывают на хирургическое поражение
- 
-19: объем упакованных клеток
-- линейный
-- количество эритроцитов по объему в крови
-- нормальный диапазон от 30 до 50. Уровень повышается по мере циркуляции
-становится скомпрометированным или когда животное становится обезвоженным.
- 
-20: общий белок
-- линейный
-- нормальные значения лежат в диапазоне 6-7,5 (г/дл)
-- чем выше значение, тем больше обезвоживание
- 
-21: внешний вид абдоминоцентеза
-- в живот лошади вводят иглу и получают жидкость из
-брюшная полость
-- возможные значения:
-1 = очистить
-2 = облачно
-3 = серозно-геморрагический
-- нормальная жидкость прозрачная, тогда как мутная или серозно-геморрагическая указывает
-скомпрометированный кишечник
- 
-22: общий белок абдомоцентеза
-- линейный
-- чем выше уровень белка, тем больше вероятность того, что
-скомпрометированный кишечник. Значения указаны в г/дл
- 
-23: исход
-- что в итоге случилось с лошадью?
-- возможные значения:
-1 = жил
-2 = умер
-3 = был усыплен
- 
-24: хирургическое поражение?
-- ретроспективно, была ли проблема (поражение) хирургической?
-- все случаи либо оперированы, либо вскрыты, чтобы
-это значение и тип поражения всегда известны
-- возможные значения:
-1 = Да
-2 = нет
- 
-25, 26, 27: тип поражения
-- первая цифра - место поражения
-1 = желудочный
-2 = тонкий кишечник
-3 = длинная кишка
-4 = lg толстой и слепой кишки
-5 = слепая кишка
-6 = поперечно-ободочная кишка
-7 = задняя/нисходящая кишка
-8 = матка
-9 = мочевой пузырь
-11 = все участки кишечника
-00 = нет
-- вторая цифра тип
-1 = простой
-2 = удушение
-3 = воспаление
-4 = другое
-- третья цифра - подтип
-1 = механический
-2 = паралитический
-0 = н/д
-- четвертая цифра - специальный код
-1 = обтурация
-2 = внутренний
-3 = внешний
-4 = адинамический
-5 = заворот/кручение
-6 = инвагинация
-7 = тромбоэмболия
-8 = грыжа
-9 = липома/сленическое ущемление
-10 = смещение
-0 = н/д
-28: cp_data
-- имеются ли данные патологии для этого случая?
-1 = Да
-2 = нет
-- эта переменная не имеет значения, так как данные патологии
-не включается и не собирается для этих случаев
- 
-8. Отсутствующие значения: 30% значений отсутствуют.
+1. TItle: Horse Colic database
+
+2. Source Information
+   -- Creators: Mary McLeish & Matt Cecile
+	  	Department of Computer Science
+		University of Guelph
+		Guelph, Ontario, Canada N1G 2W1
+		mdmcleish@water.waterloo.edu
+   -- Donor:    Will Taylor (taylor@pluto.arc.nasa.gov)
+   -- Date:     8/6/89
+
+3. Past Usage:
+   -- Unknown
+
+4. Relevant Information:
+
+   -- 2 data files
+      -- horse-colic.data: 300 training instances
+      -- horse-colic.test: 68 test instances
+   -- Possible class attributes: 24 (whether lesion is surgical)
+     -- others include: 23, 25, 26, and 27
+   -- Many Data types: (continuous, discrete, and nominal)
+
+5. Number of Instances: 368 (300 for training, 68 for testing)
+
+6. Number of attributes: 28
+
+7. Attribute Information:
+
+  1:  surgery?
+          1 = Yes, it had surgery
+          2 = It was treated without surgery
+
+  2:  Age
+          1 = Adult horse
+          2 = Young (< 6 months)
+
+  3:  Hospital Number
+          - numeric id
+          - the case number assigned to the horse
+            (may not be unique if the horse is treated > 1 time)
+
+  4:  rectal temperature
+          - linear
+          - in degrees celsius.
+          - An elevated temp may occur due to infection.
+          - temperature may be reduced when the animal is in late shock
+          - normal temp is 37.8
+          - this parameter will usually change as the problem progresses
+               eg. may start out normal, then become elevated because of
+                   the lesion, passing back through the normal range as the
+                   horse goes into shock
+  5:  pulse
+          - linear
+          - the heart rate in beats per minute
+          - is a reflection of the heart condition: 30 -40 is normal for adults
+          - rare to have a lower than normal rate although athletic horses
+            may have a rate of 20-25
+          - animals with painful lesions or suffering from circulatory shock
+            may have an elevated heart rate
+
+  6:  respiratory rate
+          - linear
+          - normal rate is 8 to 10
+          - usefulness is doubtful due to the great fluctuations
+
+  7:  temperature of extremities
+          - a subjective indication of peripheral circulation
+          - possible values:
+               1 = Normal
+               2 = Warm
+               3 = Cool
+               4 = Cold
+          - cool to cold extremities indicate possible shock
+          - hot extremities should correlate with an elevated rectal temp.
+
+  8:  peripheral pulse
+          - subjective
+          - possible values are:
+               1 = normal
+               2 = increased
+               3 = reduced
+               4 = absent
+          - normal or increased p.p. are indicative of adequate circulation
+            while reduced or absent indicate poor perfusion
+
+  9:  mucous membranes
+          - a subjective measurement of colour
+          - possible values are:
+               1 = normal pink
+               2 = bright pink
+               3 = pale pink
+               4 = pale cyanotic
+               5 = bright red / injected
+               6 = dark cyanotic
+          - 1 and 2 probably indicate a normal or slightly increased
+            circulation
+          - 3 may occur in early shock
+          - 4 and 6 are indicative of serious circulatory compromise
+          - 5 is more indicative of a septicemia
+
+ 10: capillary refill time
+          - a clinical judgement. The longer the refill, the poorer the
+            circulation
+          - possible values
+               1 = < 3 seconds
+               2 = >= 3 seconds
+
+ 11: pain - a subjective judgement of the horse's pain level
+          - possible values:
+               1 = alert, no pain
+               2 = depressed
+               3 = intermittent mild pain
+               4 = intermittent severe pain
+               5 = continuous severe pain
+          - should NOT be treated as a ordered or discrete variable!
+          - In general, the more painful, the more likely it is to require
+            surgery
+          - prior treatment of pain may mask the pain level to some extent
+
+ 12: peristalsis
+          - an indication of the activity in the horse's gut. As the gut
+            becomes more distended or the horse becomes more toxic, the
+            activity decreases
+          - possible values:
+               1 = hypermotile
+               2 = normal
+               3 = hypomotile
+               4 = absent
+
+ 13: abdominal distension
+          - An IMPORTANT parameter.
+          - possible values
+               1 = none
+               2 = slight
+               3 = moderate
+               4 = severe
+          - an animal with abdominal distension is likely to be painful and
+            have reduced gut motility.
+          - a horse with severe abdominal distension is likely to require
+            surgery just tio relieve the pressure
+
+ 14: nasogastric tube
+          - this refers to any gas coming out of the tube
+          - possible values:
+               1 = none
+               2 = slight
+               3 = significant
+          - a large gas cap in the stomach is likely to give the horse
+            discomfort
+
+ 15: nasogastric reflux
+          - possible values
+               1 = none
+               2 = > 1 liter
+               3 = < 1 liter
+          - the greater amount of reflux, the more likelihood that there is
+            some serious obstruction to the fluid passage from the rest of
+            the intestine
+
+ 16: nasogastric reflux PH
+          - linear
+          - scale is from 0 to 14 with 7 being neutral
+          - normal values are in the 3 to 4 range
+
+ 17: rectal examination - feces
+          - possible values
+               1 = normal
+               2 = increased
+               3 = decreased
+               4 = absent
+          - absent feces probably indicates an obstruction
+
+ 18: abdomen
+          - possible values
+               1 = normal
+               2 = other
+               3 = firm feces in the large intestine
+               4 = distended small intestine
+               5 = distended large intestine
+          - 3 is probably an obstruction caused by a mechanical impaction
+            and is normally treated medically
+          - 4 and 5 indicate a surgical lesion
+
+ 19: packed cell volume
+          - linear
+          - the # of red cells by volume in the blood
+          - normal range is 30 to 50. The level rises as the circulation
+            becomes compromised or as the animal becomes dehydrated.
+
+ 20: total protein
+          - linear
+          - normal values lie in the 6-7.5 (gms/dL) range
+          - the higher the value the greater the dehydration
+
+ 21: abdominocentesis appearance
+          - a needle is put in the horse's abdomen and fluid is obtained from
+            the abdominal cavity
+          - possible values:
+               1 = clear
+               2 = cloudy
+               3 = serosanguinous
+          - normal fluid is clear while cloudy or serosanguinous indicates
+            a compromised gut
+
+ 22: abdomcentesis total protein
+          - linear
+          - the higher the level of protein the more likely it is to have a
+            compromised gut. Values are in gms/dL
+
+ 23: outcome
+          - what eventually happened to the horse?
+          - possible values:
+               1 = lived
+               2 = died
+               3 = was euthanized
+
+ 24: surgical lesion?
+          - retrospectively, was the problem (lesion) surgical?
+          - all cases are either operated upon or autopsied so that
+            this value and the lesion type are always known
+          - possible values:
+               1 = Yes
+               2 = No
+
+ 25, 26, 27: type of lesion
+          - first number is site of lesion
+               1 = gastric
+               2 = sm intestine
+               3 = lg colon
+               4 = lg colon and cecum
+               5 = cecum
+               6 = transverse colon
+               7 = retum/descending colon
+               8 = uterus
+               9 = bladder
+               11 = all intestinal sites
+               00 = none
+          - second number is type
+               1 = simple
+               2 = strangulation
+               3 = inflammation
+               4 = other
+          - third number is subtype
+               1 = mechanical
+               2 = paralytic
+               0 = n/a
+          - fourth number is specific code
+               1 = obturation
+               2 = intrinsic
+               3 = extrinsic
+               4 = adynamic
+               5 = volvulus/torsion
+               6 = intussuption
+               7 = thromboembolic
+               8 = hernia
+               9 = lipoma/slenic incarceration
+               10 = displacement
+               0 = n/a
+ 28: cp_data
+          - is pathology data present for this case?
+               1 = Yes
+               2 = No
+          - this variable is of no significance since pathology data
+            is not included or collected for these cases
+
+8. Missing values: 30% of the values are missing
