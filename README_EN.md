@@ -2,8 +2,8 @@
   <a href="https://github.com/DurinPavel/horse_colic_database/blob/main/README.md" target="_blank">
     <p>Russian version</p></a>
     <p align="justify">
-      The purpose of this project is to prepare a set of data on the state of health of horses, 
-      experiencing intestinal colic, for further use using various Data Science methods.
+      The purpose of this project is to prepare a <a href="https://github.com/DurinPavel/horse_colic_database/blob/main/horse_data.csv" target="_blank">
+      set of data</a> on the state of health of horses, experiencing intestinal colic, for further use using various Data Science methods.
       The work used the capabilities of the <i>Pandas</i> programming language <i>Python</i> library.
     </p>
     <p align="justify">
