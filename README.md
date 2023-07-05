@@ -16,7 +16,9 @@
         <img src="https://github.com/DurinPavel/horse_colic_database/blob/main/images/df.png" alt="The original dataframe" width=100%>
         <hr>
         <img src="https://github.com/DurinPavel/horse_colic_database/blob/main/images/df_describe.png" alt="Basic statistics" width=100%>
+         <hr>
         <img src="https://github.com/DurinPavel/horse_colic_database/blob/main/images/df_emissions.png" alt="Emissions" width=100%>
+         <hr>
         <img src="https://github.com/DurinPavel/horse_colic_database/blob/main/images/df_omissions.png" alt="Omissions" width=100%>
         <hr>
     </p>
